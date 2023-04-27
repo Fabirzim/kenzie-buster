@@ -1,6 +1,5 @@
 # KenzieBUSTER
 
-#
 <h4>NOTE:</h4>
 
 Through this repository, I present the final result of the project that I developed for KenzieAcademy.
