@@ -11,6 +11,7 @@ As I developed my work from a fork of a private repository, I am unable to make 
 
 Develop an application to manage users, movies, and purchases, including authentication and route permissions for different types of users.
 Have the application approved in all the previously prepared tests provided in the application's base repository.
+
 *Note: The mentioned tests are included in this repository, and they come along with this final version of the project, so they can be downloaded and run locally. I provide instructions on how to run the tests locally at the end of this document.
 
 <h4>INITIAL CHALLENGES</h4>
