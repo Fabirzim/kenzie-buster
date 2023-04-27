@@ -14,6 +14,9 @@ Have the application approved in all the previously prepared tests provided in t
 
 *Note: The mentioned tests are included in this repository, and they come along with this final version of the project, so they can be downloaded and run locally. I provide instructions on how to run the tests locally at the end of this document.
 
+<h4>MAJOR TECHNOLOGIES USED</h4>
+Python, Django Rest Framework, JWT Authentication, SQLite3, Git.
+
 <h4>INITIAL CHALLENGES</h4>
 Setting up the project's structure, customizing the user model based on AbstractUser, registering models in Django Admin, creating conventional serializers, creating custom validation, overriding serializer methods, protecting routes with JWT authentication and custom Django Rest Framework permissions, creating a custom pivot table, creating choice fields for model attributes, implementing pagination with APIView.
 
