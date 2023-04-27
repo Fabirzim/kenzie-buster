@@ -9,6 +9,15 @@ As I developed my work from a fork of a private repository, I am unable to make 
 
 <h4>MAIN OBJECTIVES</h4>
 
+Develop an application to manage users, movies, and purchases, including authentication and route permissions for different types of users.
+Have the application approved in all the previously prepared tests provided in the application's base repository.
+*Note: The mentioned tests are included in this repository, and they come along with this final version of the project, so they can be downloaded and run locally. I provide instructions on how to run the tests locally at the end of this document.
+
+<h4>INITIAL CHALLENGES</h4>
+Setting up the project's structure, customizing the user model based on AbstractUser, registering models in Django Admin, creating conventional serializers, creating custom validation, overriding serializer methods, protecting routes with JWT authentication and custom Django Rest Framework permissions, creating a custom pivot table, creating choice fields for model attributes, implementing pagination with APIView.
+
+<h4>METHODOLOGY</h4>
+Use Django as the main framework to develop the application. Configuration of the structure, customization of the models, implementation of serializers, custom validation, route protection, pivot table, choice fields, and pagination. Use of Django Rest Framework tools and JWT authentication to protect routes and manage user permissions.
 
 
 
