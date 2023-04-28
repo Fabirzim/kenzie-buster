@@ -148,6 +148,7 @@ Best practices:
 
 <h4>FINAL APPLICATION TESTS:</h4>
 
+![image](https://user-images.githubusercontent.com/106698505/235030219-23ef5d92-b120-49b5-b637-2422f7906ff0.png)
 
 
 
