@@ -146,6 +146,184 @@ Best practices:
 - requirements.txt
 - Each task must have a commit following the commit standardization request (task x: completed).
 
+#FINAL APPLICATION TESTS:
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+PRINCIPAIS TECNOLOGIAS UTILIZADAS NO PROJETO
+Python, Django Rest Framework, JWT Authentication, SQLite3, Git.
+
+
+OBJETIVOS DO PROJETO
+- Desenvolver uma aplicação para gerenciar usuários, filmes e compras, incluindo autenticação e permissões de rotas para diferentes tipos de usuário.
+- Ter a aplicação aprovada em todos os testes previamente preparados e fornecidos no repositório base da aplicação. 
+
+*Observação: Os testes mesncionados a cima constam neste repositório, seguem acompanhando esta versão finalizada do projeto, portanto, podem ser baixados e rodados localmente. Forneço as instruções de como rodar os testes localemnte ao final do presente documento.
+
+
+DESAFIOS INICIAIS DO PROJETO
+Configurar a estrutura do projeto, personalizar o modelo de usuário com base no AbstractUser, registrar modelos no Django Admin, criar serializers convencionais, criar validação personalizada, sobrescrever métodos de serializers, proteger rotas com autenticação JWT e permissões personalizadas do Django Rest Framework, criar tabela pivô personalizada, criar campos de escolha para atributos do modelo, implementar paginação com APIView.
+
+METODOLOGIA
+Utilizar o Django como framework principal para desenvolver a aplicação. Configuração da estrutura, personalização dos modelos, implementação dos serializers, validação personalizada, proteção de rotas, tabela pivô, campos de escolha e paginação. Utilização das ferramentas do Django Rest Framework e autenticação JWT para proteger rotas e gerenciar as permissões dos usuários.
+
+
+
+CRITÉRIOS PARA O DESENVOLVIMENTO:
+
+VISÃO GERAL
+
+Configurar a estrutura do projeto, incluindo .gitignore, venv, requirements.txt;
+Customizar usuário com base no AbstractUser;
+Registrar models no Django Admin;
+Serializers convencionais;
+Validação customizada;
+Sobrescrita de métodos de serializers;
+Proteção de rotas via autenticação JWT e permissão customizada do Django Rest Framework;
+Tabela Pivô customizada;
+Campos de escolha para atributos de model;
+Paginação com APIView;
+
+
+LISTA DE REQUISITOS DE DESENVOLVIMENTO COMPLETA
+
+TAREFA 1:
+
+Model User herdando de AbstractUser com os campos e regras corretas.
+Serializer de Registro:
+- Campos de entrada e saída corretos
+- Método .create sobrescrito corretamente
+- Mensagem correta de unique em email e username
+
+POST /api/users/ criando non employee
+Cria non employee com superuser falso e status code 201.
+
+POST /api/users/ body incorreto retornando mensagem de required.
+Todas os campos obrigatórios retornando corretamente com status code 400.
+
+POST /api/users/ com email/username duplicado, retornando mensagem correta.
+- Mensagem de user duplicado correta
+- Mensagem de email duplicado correta
+
+
+TAREFA 2:
+Model de Movie com campos e relacionamento com User correto.
+
+Serializer de Movie:
+- Campos de entrada e saída corretos
+- Campo extra added_by correto
+- Método .create sobrescrito corretamente
+
+
+Login em /api/users/login/ retornando JWT válido
+Retorna tanto o access_token quanto o refresh_token
+
+Login em /api/users/login/ com username/password
+Mensagem padrão do Django com Status code 401
+
+Login em /api/users/login/ faltando campos
+Retornado corretamente todos os campos obrigatórios com Status code 400
+
+POST em /api/movies/ com token de employee
+Rota protegida para uso apenas por employees
+
+POST em /api/movies/ com token de non employee
+Não deve ser possivel criar filmes com token de non employee
+
+POST em /api/movies/ sem token
+Não deve ser possivel criar filmes sem autenticação
+
+POST em /api/movies/ com token correto mas campos errados
+Retornada mensagem sobre os campos obrigatorios corretamente.
+
+GET em /api/movies/
+Retornados os filmes corretamente sem necessidade de token.
+
+DELETE em /api/movies/:id/ com token de employee
+Filme deletado e mensagem e status code corretos retornados
+
+DELETE em /api/movies/:id/ com token de non employee
+Nao deve ser possivel deletar filme sem ser employee.
+
+DELETE em /api/movies/:id/ sem token
+Não deve ser possivel acessar a rota sem estar autenticado.
+
+GET em /api/movies/:id/ livre para acesso.
+Rota aberta para acesso
+
+
+TAREFA 3:
+
+Model pivo MovieOrder customizada com atributos corretos.
+
+Serializer de MovieOrder:
+- Campos de entrada e saída corretos
+- Campo extra buyed_by correto
+- Método .create sobrescrito corretamente
+
+POST em /api/movies/:id/orders/ com token de employee
+Rota protegida para uso apenas por employees
+
+POST em /api/movies/:id/orders/ com token de non employee
+Deve ser possivel comprar filmes com token de non employee
+
+POST em /api/movies/:id/orders/ sem token
+Não deve ser possivel comprar filmes sem autenticação
+
+POST em /api/movies/:id/orders/ com token correto mas campos errados
+Retornada mensagem sobre os campos obrigatórios corretamente
+
+
+TAREFA 4:
+
+Serializer de User com método .update
+- Método .update sobrescrito corretamente
+
+GET em /api/users/:id/ sem token
+Não deve ser permitido acesso sem autenticação
+
+GET em /api/users/:id/ com token de employee
+Employee deve poder acessar informação de qualquer perfil
+
+GET em /api/users/:id/ com token de non employee
+Non Employee deve poder acessar somente as informações do seu perfil
+
+PATCH em /api/users/:id/ sem token
+Não deve ser permitido acesso sem autenticação
+
+PATCH em /api/users/:id/ com token de employee
+Employee deve poder atualizar informação de qualquer perfil
+
+PATCH em /api/users/:id/ com token de non employee
+Non Employee deve poder atualizar somente as informações do seu perfil
+
+GET em /api/movies/ com paginação
+Paginação com 2 itens por página
+
+Boas práticas:
+- Sintaxe correta 
+- gitignore 
+- requirements.txt
+- Cada tarefa deve possuir um commit seguindo o pedido na padronização de commit (tarefa x: finalizada)
+
+
+
+-->
+
+
+
+
+
+
 
 
 <!-- 
