@@ -24,7 +24,127 @@ Setting up the project's structure, customizing the user model based on Abstract
 Use Django as the main framework to develop the application. Configuration of the structure, customization of the models, implementation of serializers, custom validation, route protection, pivot table, choice fields, and pagination. Use of Django Rest Framework tools and JWT authentication to protect routes and manage user permissions.
 
 
+<h4>COMPLETE DEVELOPMENT REQUIREMENTS LIST</h4>
 
+<h4>TASK 1:</h4>
+
+Model User inheriting from AbstractUser with correct fields and rules.
+
+Registration Serializer:
+- Correct input and output fields
+- Overridden .create method implemented correctly
+- Correct unique message for email and username
+
+POST /api/users/ creating non-employee
+Creates non-employee with false superuser and returns status code 201.
+
+POST /api/users/ with incorrect body returns required message.
+All required fields correctly returned with status code 400.
+
+POST /api/users/ with duplicated email/username returns correct message.
+- Correct duplicated user message
+- Correct duplicated email message
+
+
+<h4>TASK 2:</h4>
+
+Movie Model with correct fields and relationship with User.
+
+Movie Serializer:
+- Correct input and output fields
+- Correct extra field added_by
+- Overridden .create method implemented correctly
+
+Login at /api/users/login/ returning valid JWT
+Returns both access_token and refresh_token
+
+Login at /api/users/login/ with username/password
+Django's default message with status code 401
+
+Login at /api/users/login/ missing fields
+Correctly returned all required fields with status code 400
+
+POST at /api/movies/ with employee token
+Route protected for employee use only
+
+POST at /api/movies/ with non-employee token
+It should not be possible to create movies with a non-employee token
+
+POST at /api/movies/ without token
+It should not be possible to create movies without authentication
+
+POST at /api/movies/ with correct token but wrong fields
+Correct message about required fields returned.
+
+GET at /api/movies/
+Movies correctly returned without needing a token.
+
+DELETE at /api/movies/:id/ with employee token
+Movie deleted and correct message and status code returned
+
+DELETE at /api/movies/:id/ with non-employee token
+It should not be possible to delete a movie without being an employee.
+
+DELETE at /api/movies/:id/ without token
+It should not be possible to access the route without being authenticated.
+
+GET at /api/movies/:id/ free for access.
+Route open for access
+
+
+<h4>TASK 3:</h4>
+
+Customized MovieOrder pivot Model with correct attributes.
+
+MovieOrder Serializer:
+- Correct input and output fields
+- Correct extra field buyed_by
+- Overridden .create method implemented correctly
+
+POST at /api/movies/:id/orders/ with employee token
+Route protected for employee use only
+
+POST at /api/movies/:id/orders/ with non-employee token
+It should be possible to buy movies with a non-employee token
+
+POST at /api/movies/:id/orders/ without token
+It should not be possible to buy movies without authentication
+
+POST at /api/movies/:id/orders/ with correct token but wrong fields
+Correct message about required fields returned
+
+
+<h4>TASK 4:</h4>
+
+User Serializer with .update method
+- Overridden .update method implemented correctly
+
+GET at /api/users/:id/ without token
+Access should not be allowed without authentication
+
+GET at /api/users/:id/ with employee token
+Employee should be able to access any profile information
+
+GET at /api/users/:id/ with non-employee token
+Non-employee should only be able to access their own profile information
+
+PATCH at /api/users/:id/ without token
+Access should not be allowed without authentication
+
+PATCH at /api/users/:id/ with employee token
+Employee should be able to update any profile information
+
+PATCH at /api/users/:id/ with non-employee token
+Non-employee should only be able to update their own profile information
+
+GET at /api/movies/ with pagination
+Pagination with 2 items per page
+
+Best practices:
+- Correct syntax
+- gitignore
+- requirements.txt
+- Each task must have a commit following the commit standardization request (task x: completed).
 
 
 
