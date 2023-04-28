@@ -146,7 +146,7 @@ Best practices:
 - requirements.txt
 - Each task must have a commit following the commit standardization request (task x: completed).
 
-#FINAL APPLICATION TESTS:
+# FINAL APPLICATION TESTS:
 
 
 
