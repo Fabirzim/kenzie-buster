@@ -1,6 +1,3 @@
-# M5 - Kenzie Buster
-
-## Preparando ambiente para execução dos testes
 
 1. Verifique se os pacotes **pytest**, **pytest-testdox** e/ou **pytest-django** estão instalados globalmente em seu sistema:
 ```shell
