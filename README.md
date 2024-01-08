@@ -1,3 +1,6 @@
+# M5 - Kenzie Buster
+
+## Preparando ambiente para execução dos testes
 
 1. Verifique se os pacotes **pytest**, **pytest-testdox** e/ou **pytest-django** estão instalados globalmente em seu sistema:
 ```shell
@@ -34,10 +37,12 @@ source venv/Scripts/activate
 pip install pytest-testdox pytest-django
 ```
 
+## Execução dos testes:
+
 
 - Tarefa 1:
-```python
-pytest --testdox -vvs tests/tarefas/t1/
+```pythonpytest --testdox -vvs tests/tarefas/t1/
+
 ```
 
 - Tarefa 2:

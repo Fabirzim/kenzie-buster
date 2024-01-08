@@ -1,5 +1,8 @@
 from django.db import models
 
+# Create your models here.
+from django.db import models
+
 from movies_orders.apps import MoviesOrdersConfig
 
 # Create your models here.
