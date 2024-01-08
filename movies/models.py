@@ -24,7 +24,7 @@ class Movie(models.Model):
     orders = models.ManyToManyField(
         "users.User",
         through="movies.MovieOrder",
-        related_name="ordered_movies",
+        related_name="ordered_movies"
     )
 
     def __repr__(self) -> str:
